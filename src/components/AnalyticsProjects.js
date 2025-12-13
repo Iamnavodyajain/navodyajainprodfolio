@@ -10,6 +10,7 @@ import {
   DollarSign,
   ArrowRight,
   FileText,
+  ExternalLink,
 } from 'lucide-react';
 
 export default function AnalyticsProjects() {
@@ -53,6 +54,7 @@ export default function AnalyticsProjects() {
         'Onboarding improvement insights',
         'Clear experiment prioritization',
       ],
+      link: 'https://duolingo-pareport.vercel.app/',
     },
     {
       title: 'Canva — Product Metrics & Lifecycle Analysis',
@@ -91,6 +93,7 @@ export default function AnalyticsProjects() {
         'Revenue-intent behavior mapped',
         'Feature discovery priorities clarified',
       ],
+      link: 'https://canvas-analytics-project.vercel.app/',
     },
   ];
 
@@ -244,12 +247,23 @@ export default function AnalyticsProjects() {
                   ))}
                 </div>
 
-                <button className="w-full py-4 bg-[#1C1C1C] border border-[#2A2A2A] rounded-xl font-semibold text-lg flex items-center justify-center gap-3 hover:border-[#22C55E] transition">
-                  <FileText size={20} className="text-[#22C55E]" />
-                  <span className="text-[#EAEAEA]">
-                    View Analysis Details
-                  </span>
-                </button>
+                <a
+                  href={projects[activeProject].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
+                >
+                  <button className="w-full py-4 bg-[#1C1C1C] border border-[#2A2A2A] rounded-xl font-semibold text-lg flex items-center justify-center gap-3 hover:border-[#22C55E] transition group">
+                    <FileText size={20} className="text-[#22C55E]" />
+                    <span className="text-[#EAEAEA]">
+                      View Detailed Analysis
+                    </span>
+                    <ExternalLink 
+                      size={18} 
+                      className="text-[#A1A1A1] group-hover:text-[#22C55E] transition" 
+                    />
+                  </button>
+                </a>
               </div>
             </motion.div>
           </AnimatePresence>

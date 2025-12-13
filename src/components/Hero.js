@@ -75,14 +75,15 @@ export default function Hero() {
                 </motion.div>
               </motion.button>
               
-              <motion.button
+              <motion.a
+              href="https://drive.google.com/file/d/1nP9_U01VaoHk0IUwTfrnZAdC_6JB3250/view?usp=sharing"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="px-6 py-3 bg-[#1C1C1C] text-[#EAEAEA] border border-[#2A2A2A] rounded-full font-semibold text-base flex items-center gap-2 hover:border-[#22C55E] hover:text-[#22C55E] transition-all duration-300"
               >
                 <Download size={18} />
                 Download Resume
-              </motion.button>
+              </motion.a>
             </div>
             
             {/* Product Capability Indicators */}

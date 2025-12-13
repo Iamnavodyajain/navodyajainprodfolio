@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Star, Quote, Linkedin, ChevronRight, Award, ThumbsUp, MessageSquare } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Recommendations() {
   const containerRef = useRef(null);
@@ -21,7 +22,8 @@ export default function Recommendations() {
       role: "Analyst @ KPMG",
       company: "Senior (did not manage directly)",
       stars: 5,
-      icon: Award
+      icon: Award,
+      image: '/vishakha.png'
     },
     {
       quote: "Navodya is a strong problem solver who adapts quickly in high-pressure situations. He shows consistency, clarity in communication, and thoughtful decision-making. His mix of technical understanding and structured thinking makes him a reliable contributor.",
@@ -29,7 +31,8 @@ export default function Recommendations() {
       role: "Engineer at NAB",
       company: "Mentor | Former Creative Writing Society President",
       stars: 5,
-      icon: ThumbsUp
+      icon: ThumbsUp,
+      image: '/piyush.png'
     },
     {
       quote: "Navodya demonstrated strong ownership, fast learning ability, and a structured approach to product execution. He translated requirements into usable interfaces and consistently delivered with clarity, responsibility, and a product-first mindset.",
@@ -37,9 +40,12 @@ export default function Recommendations() {
       role: "Founder",
       company: "Fly Social Media",
       stars: 5,
-      icon: MessageSquare
+      icon: MessageSquare,
+      image: '/manit.png'
     }
   ];
+
+  const linkedinUrl = "https://www.linkedin.com/in/navodya-jain-3163a2300/";
 
   return (
     <section ref={containerRef} className="py-24 bg-linear-to-b from-[#151515] to-[#0E0E0E] overflow-hidden">
@@ -116,12 +122,18 @@ export default function Recommendations() {
                     "{testimonial.quote}"
                   </p>
                   
-                  {/* Author Info with Photo Placeholder */}
+                  {/* Author Info with Image */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      {/* Photo Placeholder */}
-                      <div className="w-12 h-12 bg-[#1C1C1C] rounded-full border border-[#2A2A2A] flex items-center justify-center">
-                        <div className="w-10 h-10 bg-[#2A2A2A] rounded-full"></div>
+                      {/* Image Container */}
+                      <div className="w-12 h-12 bg-[#1C1C1C] rounded-full border border-[#2A2A2A] flex items-center justify-center overflow-hidden">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       
                       <div>
@@ -132,12 +144,15 @@ export default function Recommendations() {
                     </div>
                     
                     {/* LinkedIn Badge */}
-                    <motion.div
+                    <motion.a
+                      href={linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ rotate: 15, scale: 1.1 }}
-                      className="w-12 h-12 bg-[#151515] rounded-full flex items-center justify-center border border-[#2A2A2A] group-hover:border-[#0077B5] transition-colors duration-300 overflow-hidden"
+                      className="w-12 h-12 bg-[#151515] rounded-full flex items-center justify-center border border-[#2A2A2A] group-hover:border-[#0077B5] transition-colors duration-300 overflow-hidden cursor-pointer"
                     >
                       <Linkedin className="w-6 h-6 text-[#0077B5]" />
-                    </motion.div>
+                    </motion.a>
                   </div>
                   
                   {/* Animated Underline */}
@@ -172,10 +187,12 @@ export default function Recommendations() {
               </p>
               
               <motion.a
-                href="#"
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="group inline-flex items-center gap-4 px-8 py-4 bg-[#22C55E] text-white rounded-full font-semibold text-lg hover:bg-[#16A34A] transition-all duration-300 shadow-lg shadow-[#22C55E]/20"
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-[#22C55E] text-white rounded-full font-semibold text-lg hover:bg-[#16A34A] transition-all duration-300 shadow-lg shadow-[#22C55E]/20 cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <Linkedin size={20} />

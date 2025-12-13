@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight, Target, Zap, BarChart, Users, ExternalLink, FileText, Github } from 'lucide-react';
+import Image from 'next/image';
 
 export default function FlagshipProduct() {
   const ref = useRef(null);
@@ -46,19 +47,19 @@ export default function FlagshipProduct() {
     {
       label: "Live Product",
       icon: ExternalLink,
-      href: "#",
+      href: "https://devin-out.vercel.app/",
       description: "Interactive prototype"
     },
     {
       label: "GitHub Repository",
       icon: Github,
-      href: "#",
+      href: "https://github.com/Iamnavodyajain/Devign",
       description: "Code & documentation"
     },
     {
       label: "Product Requirements",
       icon: FileText,
-      href: "#",
+      href: "https://drive.google.com/file/d/1Vxgp8poloX7mr5-XMMrMY_Sd7KxZy8GV/view?usp=sharing",
       description: "Full PRD"
     }
   ];
@@ -159,7 +160,7 @@ export default function FlagshipProduct() {
               </motion.button>
             </motion.div>
 
-            {/* Right Visual - Clean version */}
+            {/* Right Visual - Updated image container */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -167,17 +168,16 @@ export default function FlagshipProduct() {
               viewport={{ once: true }}
               className="relative"
             >
-              {/* Image Placeholder */}
-              <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[#151515] to-[#0E0E0E] border border-[#2A2A2A] shadow-2xl mb-8">
-                <div className="w-full h-full flex items-center justify-center p-12">
-                  <div className="text-center">
-                    <div className="text-6xl mb-6 text-[#22C55E]/20">💼</div>
-                    <h3 className="text-xl font-bold text-[#EAEAEA] mb-3">Freelance Platform Prototype</h3>
-                    <p className="text-[#A1A1A1] text-sm max-w-xs mx-auto">
-                      Structured onboarding flow with intelligent matching and trust signal visualization
-                    </p>
-                  </div>
-                </div>
+              {/* Updated Image Container */}
+              <div className="aspect-[1901/901] rounded-[2.5rem] overflow-hidden border border-[#2A2A2A] shadow-2xl mb-8 p-0 m-0">
+                <Image
+                  src="/DEVIGN_ui.png"
+                  alt="DEVIGN Platform Interface"
+                  width={1901}
+                  height={901}
+                  className="w-full h-full object-cover object-center"
+                  priority
+                />
               </div>
 
               {/* Project Links */}

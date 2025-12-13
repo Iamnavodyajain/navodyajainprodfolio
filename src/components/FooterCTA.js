@@ -6,10 +6,30 @@ import { Linkedin, Github, Mail, BookOpen, ArrowUpRight } from 'lucide-react';
 
 export default function FooterCTA() {
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn", href: "#", color: "bg-blue-600 hover:bg-blue-700" },
-    { icon: Github, label: "GitHub", href: "#", color: "bg-gray-800 hover:bg-gray-700" },
-    { icon: Mail, label: "Email", href: "#", color: "bg-green-600 hover:bg-green-700" },
-    { icon: BookOpen, label: "Substack", href: "#", color: "bg-purple-600 hover:bg-purple-700" }
+    { 
+      icon: Linkedin, 
+      label: "LinkedIn", 
+      href: "https://www.linkedin.com/in/navodya-jain-3163a2300", 
+      color: "bg-blue-600 hover:bg-blue-700" 
+    },
+    { 
+      icon: Github, 
+      label: "GitHub", 
+      href: "https://github.com/Iamnavodyajain", 
+      color: "bg-gray-800 hover:bg-gray-700" 
+    },
+    { 
+      icon: Mail, 
+      label: "Email", 
+      href: "jainnavodya@gmail.com",
+      color: "bg-green-600 hover:bg-green-700" 
+    },
+    { 
+      icon: BookOpen, 
+      label: "Substack", 
+      href: "https://substack.com/@theprodlens", 
+      color: "bg-purple-600 hover:bg-purple-700" 
+    }
   ];
 
   return (
@@ -47,6 +67,8 @@ export default function FooterCTA() {
               <motion.a
                 key={index}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-8 py-4 ${link.color} text-white rounded-full font-semibold text-lg flex items-center gap-3 transition-colors shadow-lg`}

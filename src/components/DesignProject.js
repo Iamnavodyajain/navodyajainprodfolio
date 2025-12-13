@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Palette, Layout, Target, Eye, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function DesignProject() {
   const containerRef = useRef(null);
@@ -98,27 +99,34 @@ export default function DesignProject() {
               </p>
             </div>
 
-            {/* CTA */}
-            <motion.button
-              type="button"
-              whileHover={{ scale: 1.02, x: 8 }}
-              whileTap={{ scale: 0.98 }}
-              className="group inline-flex items-center gap-4 px-8 py-4 bg-[#1C1C1C] border border-[#2A2A2A] rounded-full hover:border-[#22C55E] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#22C55E]/20"
-              aria-label="View design screens"
+            {/* CTA — LINKED */}
+            <Link
+              href="https://www.figma.com/design/yICiwfIBXmvdFBOTGzfRsM/MOTOKING?node-id=0-1&t=R9p4TJi1juXIt65e-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View design screens on Figma"
             >
-              <div className="flex items-center gap-3">
-                <Eye size={18} className="text-[#A1A1A1]" />
-                <span className="text-[#EAEAEA] font-semibold">View Design Screens</span>
-              </div>
-
               <motion.div
-                animate={{ x: [0, 6, 0] }}
-                transition={{ repeat: Infinity, duration: 1.6 }}
-                className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center ml-2"
+                whileHover={{ scale: 1.02, x: 8 }}
+                whileTap={{ scale: 0.98 }}
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-[#1C1C1C] border border-[#2A2A2A] rounded-full hover:border-[#22C55E] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#22C55E]/20 cursor-pointer"
               >
-                <ArrowRight size={16} className="text-white" />
+                <div className="flex items-center gap-3">
+                  <Eye size={18} className="text-[#A1A1A1]" />
+                  <span className="text-[#EAEAEA] font-semibold">
+                    View Design Screens
+                  </span>
+                </div>
+
+                <motion.div
+                  animate={{ x: [0, 6, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.6 }}
+                  className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center ml-2"
+                >
+                  <ArrowRight size={16} className="text-white" />
+                </motion.div>
               </motion.div>
-            </motion.button>
+            </Link>
           </motion.div>
 
           {/* Right Image Preview */}
@@ -131,7 +139,6 @@ export default function DesignProject() {
             className="relative"
           >
             <div className="rounded-3xl overflow-hidden border border-[#2A2A2A] shadow-2xl bg-[#0E0E0E]">
-              {/* Replace with MotoKing UI images */}
               <Image
                 src="/motoking_UI.png"
                 alt="MotoKing Website Redesign"
