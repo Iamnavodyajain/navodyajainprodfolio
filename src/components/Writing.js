@@ -14,7 +14,7 @@ export default function Writing() {
       readTime: "5 min read",
       category: "Product Thinking",
       content: "This article explores how to think beyond problem-solving to possibility-creation, focusing on how products can enable new capabilities rather than just fixing old problems. We'll examine case studies and frameworks for shifting from reactive problem-solving to proactive possibility-creation in product development.",
-      externalLink: "https://example.com/article-1",
+      externalLink: "https://theprodlens.substack.com/p/products-dont-just-solve-problems?r=4o3p2n",
       thumbnailIcon: PenTool,
       // Your image paths (put images in public folder)
       thumbnailImage: "/writing/ep01.png", // Example: public/writing/product-thinking.jpg
@@ -28,9 +28,9 @@ export default function Writing() {
       readTime: "4 min read",
       category: "Product Analytics",
       content: "Learn how to ask better questions that uncover deeper insights, moving from reporting to understanding in product analytics. This piece covers practical techniques for hypothesis-driven analysis and avoiding common data traps that lead to superficial insights.",
-      externalLink: "https://example.com/article-2",
+      externalLink: "https://theprodlens.substack.com/p/the-analytics-mindset-why-asking?r=4o3p2n",
       thumbnailIcon: BarChart,
-      thumbnailImage: "/writing/analytics-mindset.jpg",
+      thumbnailImage: "/writing/ep02.png",
       placeholderColor: "from-[#3B82F6]/20 to-[#1D4ED8]/10",
       gradientColor: "from-[#3B82F6]/30 to-transparent"
     },
@@ -43,7 +43,7 @@ export default function Writing() {
       content: "Principles for creating design systems and making decisions that scale with your product and team size. We'll discuss trade-offs between flexibility and consistency, and how to build design foundations that support long-term product evolution.",
       externalLink: "https://example.com/article-3",
       thumbnailIcon: Layers,
-      thumbnailImage: "/writing/design-scaling.jpg",
+      thumbnailImage: "/writing/ep03.png",
       placeholderColor: "from-[#8B5CF6]/20 to-[#7C3AED]/10",
       gradientColor: "from-[#8B5CF6]/30 to-transparent"
     }
